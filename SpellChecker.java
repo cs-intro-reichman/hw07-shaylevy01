@@ -31,7 +31,7 @@ public class SpellChecker {
 			int delete = levenshtein(tail(word1), word2) + 1;
 			int insert = levenshtein(word1, tail(word2)) + 1;
 			int replace = levenshtein(tail(word1), tail(word2)) + 1;	
-			return Math.min(delete,Math.min(insert, replace));
+			return Math.min(delete, Math.min(insert, replace));
 		}
 	}
 
