@@ -3,10 +3,8 @@ public class SpellChecker {
 
 
 	public static void main(String[] args) {
-		String word = "coooool";
-		int threshold = 3;
-		//String word = args[0];
-		//int threshold = Integer.parseInt(args[1]);
+		String word = args[0];
+		int threshold = Integer.parseInt(args[1]);
 		String[] dictionary = readDictionary("dictionary.txt");
 		String correction = spellChecker(word, threshold, dictionary);
 		System.out.println(correction);
@@ -19,6 +17,8 @@ public class SpellChecker {
 
 	public static int levenshtein(String word1, String word2) {
 		// This function implements the Levenshtein distance function
+		word1 = word1.toLowerCase();
+		word2 = word2.toLowerCase();
 		if (word2.isEmpty()) {
 			return word1.length();
 		}
@@ -46,7 +46,8 @@ public class SpellChecker {
 	}
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
-		// Your code goes here
+		// This funnction receives a word, a threshold value for distance, and a dictionary as inputs. 
+		// It returns the word from the dictionary that most closely resembles the given word.
 		String result = word;
 		int minDistance = 300;
 		for (int i=0 ; i<dictionary.length ; i++){
