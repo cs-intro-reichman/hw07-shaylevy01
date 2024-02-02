@@ -3,16 +3,15 @@
 public class HashTagTokenizer {
 
 	public static void main(String[] args) {
-
 		String hashTag = args[0];
 		String []dictionary = readDictionary("dictionary.txt");
 		breakHashTag(hashTag, dictionary);
 	}
 
 	public static String[] readDictionary(String fileName) {
+		// This function read a local file of words, and store them in an array
 		String[] dictionary = new String[3000];
 		In in = new In(fileName);
-		// This function read a local file of words, and store them in an array
 		for (int i=0 ; i<dictionary.length ; i++){
 			dictionary[i] = in.readLine();
 		}
@@ -31,6 +30,8 @@ public class HashTagTokenizer {
 	}
 
 	public static void breakHashTag(String hashtag, String[] dictionary) {
+		// This function receives two inputs: a hashtag (as a String) and a dictionary (an array of String). 
+		// Its purpose is to print each word embedded within the hashtag on a separate line.
 		// Base case: do nothing (return) if hashtag is an empty string.
         if (hashtag.isEmpty()) {
             return;

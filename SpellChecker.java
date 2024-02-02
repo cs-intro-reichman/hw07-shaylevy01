@@ -36,9 +36,9 @@ public class SpellChecker {
 	}
 
 	public static String[] readDictionary(String fileName) {
+		// This function read a local file of words, and store them in an array
 		String[] dictionary = new String[3000];
 		In in = new In(fileName);
-		// This function read a local file of words, and store them in an array
 		for (int i=0 ; i<dictionary.length ; i++){
 			dictionary[i] = in.readLine();
 		}
@@ -61,5 +61,4 @@ public class SpellChecker {
 		} 
 		return result;
 	}
-
 }
